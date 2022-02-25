@@ -6,7 +6,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- Base application theme. -->
+    <!-- BaseBiz application theme. -->
     <style name="AppTheme" parent="BaseAppTheme.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

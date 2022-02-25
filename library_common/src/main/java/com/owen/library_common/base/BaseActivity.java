@@ -33,6 +33,8 @@ public abstract class BaseActivity<V extends IMVVMView, P extends IPresenter<V>,
             setContentView(layoutId());
         }
         RouterUtils.inject(this);
+        initView();
+        initData();
     }
 
     @Override
@@ -44,14 +46,22 @@ public abstract class BaseActivity<V extends IMVVMView, P extends IPresenter<V>,
     /**
      * 提供view资源id
      *
-     * @return
      */
     protected abstract int layoutId();
 
     /**
+     * 初始化数据
+     */
+    protected abstract void initData();
+
+    /**
+     * 初始化view
+     */
+    protected abstract void initView();
+
+    /**
      * 是否使用数据绑定,子类可重写
      *
-     * @return
      */
     protected boolean useDataBinding() {
         return true;
@@ -60,7 +70,6 @@ public abstract class BaseActivity<V extends IMVVMView, P extends IPresenter<V>,
     /**
      * 获取ViewDataBinding
      *
-     * @return
      */
     @Override
     public T getViewDataBinding() {
