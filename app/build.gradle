@@ -3,16 +3,21 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk rootProject.ext.android.compileSdk
 
     defaultConfig {
-        applicationId "com.owen.mvvm"
-        minSdk 21
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -25,14 +30,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    //view绑定
+    viewBinding {
+        enabled = true
+    }
+
+    //数据绑定
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
-
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation project(':library_common')//library_common
 }

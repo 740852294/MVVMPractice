@@ -32,8 +32,8 @@ ext {
             //
             "RWidgetHelper"                : "com.ruffian.library:RWidgetHelper-AndroidX:0.0.8",
             //ARouter
-            "arouter_api"                  : "com.alibaba:arouter-api:1.5.1",
-            "arouter_compiler"             : "com.alibaba:arouter-compiler:1.5.1",
+            "arouter_api"                  : "com.alibaba:arouter-api:1.5.2",
+            "arouter_compiler"             : "com.alibaba:arouter-compiler:1.5.2",
             //support
             "appcompat"                    : "androidx.appcompat:appcompat:1.4.1",
             "constraintlayout"             : "androidx.constraintlayout:constraintlayout:2.1.3",

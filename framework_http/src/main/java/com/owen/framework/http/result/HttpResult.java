@@ -92,9 +92,9 @@ public class HttpResult<T> implements IHttpResult, IParseHelper {
      * @return
      */
     private <T> Type getGenericType(HttpCallback<T> httpCallback) {
-        //com.owen.framework.http.HttpCallback<com.ruffian.android.mvvm.Response<com.ruffian.android.xx.UserBean>>
+        //com.owen.framework.http.HttpCallback<com.owen.mvvm.Response<com.ruffian.android.xx.UserBean>>
         Type[] types = httpCallback.getClass().getGenericInterfaces();
-        //com.ruffian.android.mvvm.Response<com.ruffian.android.module.account.entity.UserBean>
+        //com.owen.mvvm.Response<com.ruffian.android.module.account.entity.UserBean>
         Type[] params = ((ParameterizedType) types[0]).getActualTypeArguments();
         return params[0];
     }
@@ -105,9 +105,9 @@ public class HttpResult<T> implements IHttpResult, IParseHelper {
      * @param type
      */
     private String getGenericTypeName(Type type) {
-        //com.ruffian.android.mvvm.Response<com.ruffian.android.xx.UserBean>
+        //com.owen.mvvm.Response<com.owen.xx.UserBean>
         String genericTAllName = type.toString();
-        //com.ruffian.android.mvvm.Response 移除 <xxx>
+        //com.owen.mvvm.Response 移除 <xxx>
         String genericTMainName = genericTAllName.replaceAll("<[^<>]*>", "");
         return genericTMainName;
     }

@@ -26,3 +26,4 @@ rootProject.name = "MVVMPractice"
 include ':app'
 include ':framework_http'
 include ':framework_mvvm'
+include ':library_common'
